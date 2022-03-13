@@ -169,6 +169,10 @@ button#menu{
     text-transform: capitalize;
     font-family:nunito;
 }
+#links-small ul li a.active{
+    color: var(--secondary);
+    font-weight: bold;
+}
 #links-small ul li:hover{
     background: var(--lightcolor);
 }
@@ -587,7 +591,10 @@ button#menu{
 }
 .footer .container .col .f-h2{
     font-size: 30px;
-    color: var(--secondary);
+    color: var(--primary);
+}
+.footer .container .col .f-h2 i{
+    color: #E12454;
 }
 .footer .container .col p{
     line-height: 1.3;
@@ -616,11 +623,41 @@ button#menu{
     background: var(--primary);
     transform: scale(1.2);
 }
-
-
-
-
-
+hr{
+    width: 90%;
+    margin: 40px auto 10px;
+    border-top: 1px solid var(--lsmallW);
+}
+.footer p.last{
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #6F8BA4;
+    text-transform: capitalize;
+}
+.footer p.last span{
+    color: #223A66;
+}
+/* go to top */
+.go{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100000;
+}
+.go a i{
+ transform: rotate(90deg);
+ color: var(--lightcolor);
+}
 
 
 
@@ -697,4 +734,141 @@ button#menu{
         justify-content: center;
         align-items: flex-start;
     }
+}
+
+/* services_grid_items */
+#services_grid_items{
+    padding: 100px 0;
+}
+#services_grid_items .container{
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+#services_grid_items .container .col{
+    background: var(--lsmallW);
+    position: relative;
+}
+#services_grid_items .container .col .text{
+    padding: 10px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* about section of the page */
+#about-showcase{
+    height: 60vh;
+    background: linear-gradient(#223a66d7,#223a66f1),
+    url(/img/a4-min.jpg) center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about-showcase .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about-showcase .container h1{
+    color: var(--lightcolor);
+    text-transform: capitalize;
+}
+.about-flex-1 .container{
+    padding: 100px 30px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 2fr;
+}
+.about-flex-1 .container .heading h1{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 45px;
+    color: var(--primary);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.about-flex-1 .container .text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    color: var(--textlight);
+}
+/* the girdid doctors of about */
+.about-grid-doctors{
+    padding: 0 0 100px;
+}
+.about-grid-doctors .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    text-transform: capitalize;
+}
+.about-grid-doctors .container .col img{
+    height: 200px;
+}
+.about-grid-doctors .container .col .text h2{
+    font-family: great vibes;
+    font-size: 25px;
+    margin: 20px 0 10px;
+}
+.about-grid-doctors .container .col .text p{
+    color: var(--iconBg);
+    font-family: poppins;
+    line-height: 1.8;
+}
+/* our_partners */
+.our_partners{
+    background: var(--lightcolor);
+    padding: 50px 0;
+}
+.our_partners .container h2{
+    font-size: 50px;
+    color: var(--primary);
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.our_partners .container{
+    /* grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    display: grid; */
+}
+.our_partners .container .img-grid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(200px ,1fr));
+}
+.our_partners .container .img-grid img{
+    height: 200px;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:8900px){
+    .about-flex-1 .container{
+        grid-template-columns: 1fr;
+    }
+
 }
