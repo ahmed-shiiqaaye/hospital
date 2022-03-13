@@ -651,12 +651,11 @@ hr{
     bottom: 40px;
     right: 40px;
     z-index: 100000;
-}
     border: 2px solid var(--lightcolor);
 }
 .go.active{
     display: flex;
-  
+}
 .go a i{
  transform: rotate(90deg);
  color: var(--lightcolor);
@@ -665,14 +664,12 @@ hr{
 
 
 
-@media(max-width:1000px){
+@media(max-width:750px){
     .top-nav .container{
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         gap: 10px;
-    }
-    .top-nav .container .right{
     }
 }
 @media(max-width:920px){
