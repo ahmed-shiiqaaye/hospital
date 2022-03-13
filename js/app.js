@@ -10,3 +10,13 @@ menuBar.onclick = () =>{
 
         }
 }
+
+let goElement = document.querySelector('.go');
+window.addEventListener('scroll',function(){
+    let pageScroll = window.pageYOffset;
+    if(pageScroll > 370){
+        goElement.classList.add('active')
+    }else{
+        goElement.classList.remove('active')
+    }
+})
