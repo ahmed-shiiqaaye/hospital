@@ -754,13 +754,18 @@ hr{
 
 /* doctors_site */
 #doctors-page .container{
-    display: block;
+    
 }
 #doctors-page .container .col{
     display: flex;
+    flex-direction: column;
     background: var(--lsmallW);
     margin-bottom: 20px;
     gap: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 10px var(--textlight);
 }
 #doctors-page .container .col img{
     height: 200px;
