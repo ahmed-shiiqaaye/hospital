@@ -20,3 +20,20 @@ window.addEventListener('scroll',function(){
         goElement.classList.remove('active')
     }
 })
+
+
+let sliderContainers = document.querySelectorAll('.sliderContainer');
+let nextBtn = document.querySelectorAll('.next');
+let prevBtn = document.querySelectorAll('.prev');
+
+sliderContainers.forEach((slider, i) =>{
+    let sliderWith = slider.getBoundingClientRect().width;
+
+    nextBtn[i].addEventListener('click',()=>{
+        slider.scrollLeft += sliderWith
+    })
+    prevBtn[i].addEventListener('click',()=>{
+        slider.scrollLeft -= sliderWith
+    })
+
+})

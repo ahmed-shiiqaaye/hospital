@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Charm&family=Great+Vibes&family=Josefin+Sans&family=League+Gothic&family=Lobster&family=Nunito&family=Permanent+Marker&family=Poppins:wght@400;500&family=Roboto&family=Satisfy&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Fira+Sans:wght@400;500;600&family=Germania+One&family=Josefin+Sans&family=Lato&family=Lobster&family=Nunito&family=Oleo+Script&family=Oswald:wght@300;400;500;700&family=PT+Sans:ital@1&family=Poppins:wght@400;500&family=Ubuntu:ital,wght@0,400;0,700;1,500&display=swap');*{
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -21,7 +20,7 @@
 }
 
 body{
-    font-family: sans-serif;
+    font-family:pt sans;
 }
 .container{
     max-width: 1100px;
@@ -117,7 +116,6 @@ p{
     font-size: 19px;
     font-weight: 500;
     text-transform: capitalize;
-    font-family:nunito ;
 }
 .navbar .links ul li a.active{
     color: var(--secondary);
@@ -167,7 +165,6 @@ button#menu{
     color: black;
     font-weight: 500;
     text-transform: capitalize;
-    font-family:nunito;
 }
 #links-small ul li a.active{
     color: var(--secondary);
@@ -408,19 +405,19 @@ button#menu{
     text-transform: capitalize;
 }
 /* awards  */
-.awards{
+.sliderSection{
     background-color: var(--lightcolor);
+    position: relative;
+    padding: 70px 30px;
 }
-.awards .container {
-    padding: 90px 30px;
-}
-.awards .container .title{
+
+.sliderSection .container .title{
     width: 70%;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 30px;
 }
-.awards .container h1{
+.sliderSection .container h1{
     font-size: 40px;
     color: var(--primary);
     margin-bottom: 30px;
@@ -428,41 +425,60 @@ button#menu{
     position: relative;
     text-transform: capitalize;
 }
-.awards .container .p{
+.sliderSection .container .p{
     margin-bottom: 40px;
     color: var(--primary);
 }
-.awards .container .grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 30px;
+
+.sliderSection .btn{
+    width: 40px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.3);
+    outline: none;
+    height: 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: 65%;
+    z-index: 99;
+    cursor: pointer;
 }
-.awards .container .grid .card{
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px var(--lsmallW);
-    position: relative;
+.sliderSection .btn.prev{
+    left: 0;
 }
-.awards .container .grid .card .titles{
-    margin-bottom: 20px;
+.sliderSection .btn.next{
+    right: 0;
+}
+.sliderSection .sliderContainer{
+    padding: 0 10vw;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
-.awards .container .grid .card .titles i{
-    font-size: 40px;
-    margin-right: 15px;
-    color: var(--secondary);
+.sliderSection .sliderContainer::-webkit-scrollbar{
+    display: none;
+
 }
-.awards .container .grid .card .titles span{
-    font-size: 20px;
-    text-transform: capitalize;
-    font-weight: bold;
-    color: var(--primary);
+.sliderSection .sliderContainer .card{
+    flex: 0 0 auto;
+    width: 500px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    margin-right: 50px;
+    border-radius: 10px;
 }
-.awards .container .grid .card p{
-    color: var(--primary);
+.sliderSection .sliderContainer .card img{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+.sliderSection .sliderContainer .card .details p{
+    color: #223A66;
+    margin-bottom:20px;
+}
+.sliderSection .sliderContainer .card .details h4{
+    text-transform: uppercase;
 }
 /* book appionmoent */
 .book{
@@ -498,7 +514,6 @@ button#menu{
     font-size: 16px;
     background: #F4F9FC;
     text-transform: capitalize;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .book .container .right form button{
     background: var(--primary);
@@ -540,7 +555,6 @@ button#menu{
 }
 .scroll .container .grid .card .titles .text .name{
     font-size: 25px;
-    font-family: josefin sans;
     color: var(--primary);
 }
 .scroll .container .grid .card .titles .img img{
@@ -570,7 +584,6 @@ button#menu{
 .footer .container .col h2{
     color: var(--primary);
     text-transform: capitalize;
-    font-family: josefin sans;
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -752,10 +765,6 @@ hr{
   
 }
 
-/* doctors_site */
-#doctors-page .container{
-    
-}
 #doctors-page .container .col{
     display: flex;
     flex-direction: column;
@@ -771,9 +780,7 @@ hr{
     height: 200px;
     width: 300px;
 }
-#doctors-page .container .col .text h2{
-    font-family: josefin sans;
-}
+
 /* doctor_nurse */
 .doctor_nurse{
     padding: 100px 0;
@@ -815,17 +822,29 @@ hr{
 
 
 
-
+/* showcases */
+.about-us{
+    background: linear-gradient(#223a66d7,#223a66f1),
+    url(https://media.istockphoto.com/photos/modern-hospital-building-picture-id1312706413?b=1&k=20&m=1312706413&s=170667a&w=0&h=VRi3w2E1UqvCCcK-nDV6mH7FhDZoTU9MM2QKSom96X4=) no-repeat center center/cover;
+}
+.doctors-us{
+    background: linear-gradient(#223a66d7,#223a66f1),
+    url(https://media.istockphoto.com/photos/happy-medical-team-standing-against-white-background-picture-id591412924?b=1&k=20&m=591412924&s=170667a&w=0&h=OzwanaLHaBRhUjN3oAgkCTTz-Cgtz4UAxG5FFBM6_CA=) no-repeat center center/cover;
+}
+.services-us{
+    background: linear-gradient(#223a66d7,#223a66f1),
+    url(https://media.istockphoto.com/photos/asian-chinese-female-nurse-preparing-syringe-for-vaccine-injection-in-picture-id1311293758?b=1&k=20&m=1311293758&s=170667a&w=0&h=4fCvh1rhccngTaydN3cMTbOC3ZcU0QR_xwpKw7jTz9s=) no-repeat center center/cover;
+}
+.contact-us{
+    background: linear-gradient(#223a66d7,#223a66f1),
+    url(https://media.istockphoto.com/photos/modern-keyboard-wih-contact-us-button-picture-id617893290?b=1&k=20&m=617893290&s=170667a&w=0&h=PvOZgJrzeiPDxl1aqUmzkl7NViTdV00C0VGR9UKYak8=) no-repeat center center/cover;
+}
 /* about section of the page */
 #about-showcase{
     height: 60vh;
-    background: linear-gradient(#223a66d7,#223a66f1),
-    url(/img/a4-min.jpg) center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: josefin sans;
-
 }
 #about-showcase .container{
     display: flex;
@@ -847,7 +866,6 @@ hr{
     font-weight: bold;
     font-size: 45px;
     color: var(--primary);
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .about-flex-1 .container .text{
     display: flex;
@@ -871,13 +889,11 @@ hr{
     height: 200px;
 }
 .about-grid-doctors .container .col .text h2{
-    font-family:nunito;
     font-size: 25px;
     margin: 20px 0 10px;
 }
 .about-grid-doctors .container .col .text p{
     color: var(--iconBg);
-    font-family: poppins;
     line-height: 1.8;
 }
 /* our_partners */
@@ -892,10 +908,7 @@ hr{
     text-align: center;
     padding-bottom: 50px;
 }
-.our_partners .container{
-    /* grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-    display: grid; */
-}
+
 .our_partners .container .img-grid{
     display: grid;
     gap: 20px;
@@ -946,7 +959,63 @@ hr{
 
 
 
-
+/* awards  */
+.awards{
+    background-color: var(--lightcolor);
+}
+.awards .container {
+    padding: 90px 30px;
+}
+.awards .container .title{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.awards .container h1{
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 30px;
+    display: inline-block;
+    position: relative;
+    text-transform: capitalize;
+}
+.awards .container .p{
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+.awards .container .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
+}
+.awards .container .grid .card{
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--lsmallW);
+    position: relative;
+}
+.awards .container .grid .card .titles{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.awards .container .grid .card .titles i{
+    font-size: 40px;
+    margin-right: 15px;
+    color: var(--secondary);
+}
+.awards .container .grid .card .titles span{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: var(--primary);
+}
+.awards .container .grid .card p{
+    color: var(--primary);
+}
 
 
 
